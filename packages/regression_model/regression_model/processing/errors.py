@@ -4,3 +4,4 @@ class BaseError(Exception):
 
 class InvalidModelInputError(BaseError):
     """Model input contains an error."""
+
