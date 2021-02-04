@@ -18,7 +18,7 @@ TESTING_DATA_FILE = "test.csv"
 TRAINING_DATA_FILE = "train.csv"
 TARGET = "SalePrice"
 
-
+# New Change
 # variables
 FEATURES = [
     "MSSubClass",
