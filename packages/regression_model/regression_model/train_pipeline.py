@@ -41,7 +41,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import joblib
 
-from pipeline import titanic_pipe
+from pipeline import price_pipe
 import config
 
 def run_training():
@@ -57,8 +57,8 @@ def run_training():
         test_size=0.2,
         random_state=0)  # we are setting the seed here
 
-    titanic_pipe.fit(X_train, y_train)
-    joblib.dump(titanic_pipe, config.PIPELINE_NAME)
+    price_pipe.fit(X_train, y_train)
+    joblib.dump(price_pipe, config.PIPELINE_NAME)
 
 
 if __name__ == '__main__':
