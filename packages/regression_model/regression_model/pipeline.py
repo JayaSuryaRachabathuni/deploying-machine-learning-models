@@ -1,6 +1,6 @@
-from sklearn.linear_model import Lasso
+from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import StandardScaler
 
 from regression_model.processing import preprocessors as pp
 from regression_model.processing import features
