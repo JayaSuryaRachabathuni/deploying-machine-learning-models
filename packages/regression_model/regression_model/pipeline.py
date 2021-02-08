@@ -1,4 +1,4 @@
-from sklearn.linear_model import LogisticRegression
+from sklearn.linear_model import Lasso
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
@@ -77,6 +77,6 @@ price_pipe = Pipeline(
             pp.CategoricalEncoder(variables=config.CATEGORICAL_VARS)),
         
         ('scaler', StandardScaler()),
-        ('Linear_model', LogisticRegression(C=0.0005, random_state=0))
+        ('Linear_model', Lasso(C=0.0005, random_state=0))
     ]
 )
