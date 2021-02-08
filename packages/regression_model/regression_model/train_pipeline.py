@@ -41,8 +41,8 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 import joblib
 
-from pipeline import price_pipe
-import config
+from regression_model import pipeline import price_pipe
+from regression_model.config import config
 
 def run_training():
     """Train the model."""
