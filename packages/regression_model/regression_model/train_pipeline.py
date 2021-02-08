@@ -43,12 +43,14 @@ import joblib
 
 from regression_model.pipeline import price_pipe
 from regression_model.config import config
+from regression_model.processing.data_management import load_dataset, save_pipeline
 
 def run_training():
     """Train the model."""
 
     # read training data
-    data = pd.read_csv(config.TRAINING_DATA_FILE)
+    #data = pd.read_csv(config.TRAINING_DATA_FILE)
+    data = load_dataset(file_name=config.TRAINING_DATA_FILE)
 
     # divide train and test
     X_train, X_test, y_train, y_test = train_test_split(
