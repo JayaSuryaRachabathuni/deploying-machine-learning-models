@@ -8,26 +8,27 @@ import json
 class InvalidInputError(Exception):
     """Invalid model input."""
 
-
+"""
 SYNTAX_ERROR_FIELD_MAP = {
     '1stFlrSF': 'FirstFlrSF',
     '2ndFlrSF': 'SecondFlrSF',
     '3SsnPorch': 'ThreeSsnPortch'
 }
-
+"""
 
 class HouseDataRequestSchema(Schema):
-    Alley = fields.Str(allow_none=True)
-    BedroomAbvGr = fields.Integer()
-    BldgType = fields.Str()
-    BsmtCond = fields.Str()
-    BsmtExposure = fields.Str(allow_none=True)
-    BsmtFinSF1 = fields.Float()
-    BsmtFinSF2 = fields.Float()
-    BsmtFinType1 = fields.Str()
-    BsmtFinType2 = fields.Str()
-    BsmtFullBath = fields.Float()
-    BsmtHalfBath = fields.Float()
+    PassesengerId = fields.Str()
+    PClass = fields.Integer()
+    Name = fields.Str()
+    Sex = fields.Str()
+    Age = fields.Integer(allow_none=True)
+    SibSp = fields.Str()
+    Parch = fields.Integer()
+    Ticket = fields.Str()
+    Fare = fields.Float()
+    Cabin = fields.String(allow_none=True)
+    Embarked = fields.Str(allow_none=True)
+    """
     BsmtQual = fields.Str(allow_none=True)
     BsmtUnfSF = fields.Float()
     CentralAir = fields.Str()
@@ -97,6 +98,7 @@ class HouseDataRequestSchema(Schema):
     FirstFlrSF = fields.Integer()
     SecondFlrSF = fields.Integer()
     ThreeSsnPortch = fields.Integer()
+    """
 
 
 def _filter_error_rows(errors: dict,
@@ -120,10 +122,12 @@ def validate_inputs(input_data):
     schema = HouseDataRequestSchema(strict=True, many=True)
 
     # convert syntax error field names (beginning with numbers)
+    """
     for dict in input_data:
         for key, value in SYNTAX_ERROR_FIELD_MAP.items():
             dict[value] = dict[key]
             del dict[key]
+    """
 
     errors = None
     try:
@@ -134,11 +138,12 @@ def validate_inputs(input_data):
     # convert syntax error field names back
     # this is a hack - never name your data
     # fields with numbers as the first letter.
+    """
     for dict in input_data:
         for key, value in SYNTAX_ERROR_FIELD_MAP.items():
             dict[key] = dict[value]
             del dict[value]
-
+    """
     if errors:
         validated_input = _filter_error_rows(
             errors=errors,
