@@ -51,6 +51,10 @@ _logger = logging.getLogger(__name__)
 
 price_pipe = Pipeline(
     [
+        ("drop_features",
+            pp.DropUnecessaryFeatures(variables_to_drop=config.DROP_FEATURES),
+        ),
+
         ('categorical_imputer',
          pp.CategoricalImputer(variables=config.CATEGORICAL_VARS)),
 
@@ -71,7 +75,7 @@ price_pipe = Pipeline(
          
         ('categorical_encoder',
             pp.CategoricalEncoder(variables=config.CATEGORICAL_VARS)),
-         
+        
         ('scaler', StandardScaler()),
         ('Linear_model', LogisticRegression(C=0.0005, random_state=0))
     ]

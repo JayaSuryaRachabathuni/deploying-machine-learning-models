@@ -39,6 +39,8 @@ CATEGORICAL_VARS_WITH_NA = ["Cabin","Embarked"]
 
 CABIN = 'Cabin'
 
+DROP_FEATURES = ["Name","Parch","SibSp","Ticket","PassengerID"]
+
 NUMERICALS_LOG_VARS = ["Fare"]
 
 NUMERICAL_NA_NOT_ALLOWED = [
