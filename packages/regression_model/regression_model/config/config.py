@@ -39,7 +39,7 @@ CATEGORICAL_VARS_WITH_NA = ["Cabin","Embarked"]
 
 CABIN = 'Cabin'
 
-DROP_FEATURES = ["Name","Parch","SibSp","Ticket","PassengerId"]
+DROP_FEATURES = ["Name","Parch","SibSp","Pclass","PassengerId"]
 
 NUMERICALS_LOG_VARS = ["Fare"]
 
