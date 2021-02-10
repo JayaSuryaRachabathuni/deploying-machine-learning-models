@@ -50,7 +50,7 @@
 	"BsmtHalfBath": 0.0,
 	"FullBath": 1,
 	"HalfBath": 0,
-	"BedroomAbvGr": 5,
+	"BedroomAbvGr": "5",
 	"KitchenAbvGr": 1,
 	"KitchenQual": "TA",
 	"TotRmsAbvGrd": 5,
